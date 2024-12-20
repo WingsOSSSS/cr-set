@@ -242,25 +242,27 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
 
             String key = preference.getKey();
             if (key.equals("top_level_network")
-            	|| key.equals("ext_settings")
             	|| key.equals("top_level_apps")
-            	|| key.equals("top_level_accessibility")
+                || key.equals("top_level_battery")
+            	|| key.equals("top_level_wallpaper")
             	|| key.equals("top_level_emergency")
                 || key.equals("top_level_system")){
                 preference.setLayoutResource(R.layout.everestos_dashboard_preference_top);
             } else if (key.equals("top_level_battery")
-            	|| key.equals("top_level_display")
+                || key.equals("top_level_sound")
+                || key.equals("top_level_accessibility")
             	|| key.equals("top_level_security")
             	|| key.equals("top_level_privacy")
             	|| key.equals("top_level_safety_center")
             	|| key.equals("top_level_storage")
-            	|| key.equals("top_level_wellbeing")
-            	|| key.equals("top_level_notifications")){
+            	|| key.equals("top_level_wellbeing")){
                 preference.setLayoutResource(R.layout.everestos_dashboard_preference_middle);
             } else if ("top_level_google".equals(key)){
                 preference.setLayoutResource(R.layout.everestos_dashboard_preference_bottom);
             } else if (key.equals("top_level_accounts") && gAppsExists){
                 preference.setLayoutResource(R.layout.everestos_dashboard_preference_middle);
+            } else if (key.equals("ext_settings")){
+                preference.setLayoutResource(R.layout.xd_dashboard_phone);
             } else {
                 preference.setLayoutResource(R.layout.everestos_dashboard_preference_bottom);
             }
